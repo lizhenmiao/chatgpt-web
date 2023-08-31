@@ -1,0 +1,10 @@
+run = ' cd ./service nohup && pnpm start > service.log & echo "Start service complete!" && cd .. echo "" > front.log nohup pnpm dev > front.log & echo "Start front complete!" tail -f front.log'
+language = "node"
+
+[env]
+PATH = "/root/${PROJECT_DIR}/.config/npm/node_global/bin:/root/${PROJECT_DIR}/node_modules/.bin:${PATH}"
+XDG_CONFIG_HOME = "/root/.config"
+npm_config_prefix = "/root/${PROJECT_DIR}/.config/npm/node_global"
+
+[debugger]
+program = "main.js"
